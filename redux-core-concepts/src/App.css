@@ -1,0 +1,16 @@
+.product{
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.product img{
+    width: 100%;
+}
+
+.grid{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
