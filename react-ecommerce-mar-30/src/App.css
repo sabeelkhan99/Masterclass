@@ -1,0 +1,27 @@
+.container{
+    width: 80vw;
+    margin: 2rem auto;
+}
+
+.autosuggestion{
+    margin: 2rem auto;
+}
+
+.autosuggestion input{
+    font-size: 2rem;
+    width: 100%;
+}
+
+.autosuggestion input:focus{
+    outline: none
+}
+
+.item{
+    height: 80px;
+    border: 1px solid #ccc;
+    padding: 1rem;
+}
+
+.item img{
+    height: 100%;
+}
