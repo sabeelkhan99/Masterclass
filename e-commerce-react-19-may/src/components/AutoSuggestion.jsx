@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 async function fetchProducts(query) {
     console.log('API Called');
@@ -11,6 +11,7 @@ const AutoSuggestion = () => {
 
     const [query, setQuery] = useState("");
     const [results, setResults] = useState([]);
+    const timerIdRef = useRef();
 
     // useEffect is executed when it is mounted first time, and then it is executed when query is updated.
     useEffect(() => {
@@ -23,10 +24,15 @@ const AutoSuggestion = () => {
         }
         makeApiCall()
     }, [query]);
-
+    
     const inputChangeHandler = (event) => {
-        setQuery(event.target.value); //sam
+        clearTimeout(timerIdRef.current);
+        timerIdRef.current = setTimeout(() => {
+            setQuery(event.target.value); //sam
+        }, 300)
     }
+
+
     return (
         <section className='container'>
             <h1>E-Commerce: Auto Suggestion</h1>
